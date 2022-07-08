@@ -200,7 +200,7 @@ async def encod(event):
         kk = dl.split("/")[-1]
         aa = kk.split(".")[-1]
         rr = f"encode"
-        bb = kk.replace(f".{aa}", " compressed.mkv")
+        bb = kk.replace(f".{aa}", "-Yugen")
         out = f"{rr}/{bb}"
         thum = "thumb.jpg"
         dtime = ts(int((es - s).seconds) * 1000)
@@ -242,7 +242,7 @@ async def encod(event):
                 ),
             )
         ds = await e.client.send_file(
-            e.chat_id, file=ok, force_document=True, thumb=thum
+            e.chat_id, file=ok, force_document=True, 
         )
         await nnn.delete()
         org = int(Path(dl).stat().st_size)
