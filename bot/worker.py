@@ -61,7 +61,7 @@ async def dl_link(event):
     kk = dl.split("/")[-1]
     aa = kk.split(".")[-1]
     rr = "encode"
-    bb = kk.replace(f".{aa}", "_compressed.mkv")
+    bb = kk.replace(f".{aa}", "- yugen.mkv")
     out = f"{rr}/{bb}"
     thum = "thumb.jpg"
     dtime = ts(int((es - s).seconds) * 1000)
@@ -102,7 +102,7 @@ async def dl_link(event):
             ),
         )
     ds = await xxx.client.send_file(
-        xxx.chat_id, file=ok, force_document=True, thumb=thum
+        xxx.chat_id, file=ok, force_document=True
     )
     await nnn.delete()
     org = int(Path(dl).stat().st_size)
@@ -242,7 +242,7 @@ async def encod(event):
                 ),
             )
         ds = await e.client.send_file(
-            e.chat_id, file=ok, force_document=True, 
+            e.chat_id, file=ok, force_document=True
         )
         await nnn.delete()
         org = int(Path(dl).stat().st_size)
