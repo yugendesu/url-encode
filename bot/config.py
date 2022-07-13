@@ -23,7 +23,7 @@ try:
     OWNER = config("OWNER")
     FFMPEG = config(
         "FFMPEG",
-       default='''ffmpeg -i "{}" -pix_fmt yuv420p10le -r 24000/1001 -s 1280x720 -preset medium -c:v libx265 -crf 21.4 -x265-params deblock=0:-1:no-sao:psy-rd=2:psy-rdoq=4.00:frame-threads=4 -map 0:v -c:a libopus -b:a 96k -map 0:a -c:s copy -map 0:s? "{}"''',
+       default='''ffmpeg -i "{}" -pix_fmt yuv420p10le -r 24000/1001 -s 1280x720 -preset medium -c:v libx265 -crf 21.4 -level:v 4.1 -x265-params deblock=1:1:no-sao:psy-rd=0.80:psy-rdoq=0.00:aq-mode=2:aq-strength=0.80:frame-threads=4 -map 0:v -c:a libopus -b:a 96k -map 0:a -c:s copy -map 0:s? "{}"''',
     )
     THUMB = config(
         "THUMBNAIL", default="https://telegra.ph/file/75ee20ec8d8c8bba84f02.jpg"
